@@ -6,12 +6,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Delius&family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="/css/Style.css">
   <link rel="shortcut icon" href="Images/avion.png" type="image/x-icon" />
   <title>Document</title>
 </head>
 <body>
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a href="">Home</a></li>
+      <li><a href="Mytravels.html">MyTravels</a></li>
+      <li><a href="info.html">Info</a></li>
+  </nav>
+  <img src="Images/london.jpg" alt="" >
+
+</img>
   <h1> Travels </h1>
-  <img src="Images/london.jpg" alt="">
+<script>
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href !== "#") {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); // doit correspondre à la durée de transition CSS
+      }
+    });
+  });
+</script>
 </body>
-</html>
+</html> 
